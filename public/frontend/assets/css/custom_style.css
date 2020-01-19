@@ -1,0 +1,312 @@
+/*style for 67% screen*/
+@media (min-width: 1830px) and (max-width: 2050px) {
+    .logo img{
+        /*height: 121px !important;
+        width: 350px !important; */
+    }
+
+    .tp-caption{
+        bottom: -455px !important;
+    }
+
+    .readMore{
+        bottom: -560px !important;
+        left: 530px !important;
+    }
+}
+
+/*style for 75% screen*/
+@media (min-width: 1725px) and (max-width: 1825px) {
+    .logo img{
+        /*height: 121px !important;
+        width: 339px !important;*/ 
+    }
+
+    .tp-caption{
+        bottom: -406px !important;
+    }
+
+    .readMore{
+        bottom: -520px !important;
+        left: 520px !important;
+    }
+}
+
+/*style for 80% screen*/
+@media (min-width: 1522px) and (max-width: 1720px) {
+    .logo img{
+        /*height: 115px !important;
+        width: 315px !important; */
+    }
+
+    .tp-caption{
+        bottom: -379px !important;
+    }
+
+    .readMore{
+        bottom: -490px !important;
+        left: 510px !important;
+    }
+}
+
+/*style for 90% screen*/
+@media (min-width: 1371px) and (max-width: 1520px) {
+    .logo img{
+        /*height: 108px !important;
+        width: 280px !important; */
+    }
+
+    .tp-caption{
+        bottom: -350px !important;
+    }
+
+    .readMore{
+        bottom: -460px !important;
+        left: 560px !important;
+    }
+}
+
+
+/*style for 100% screen*/
+@media (min-width: 1250px) and (max-width: 1370px) {
+    .logo img{
+        /*height: 102px !important;
+        width: 262px !important;*/ 
+    }
+    .tp-caption{
+        bottom: -301px !important;
+    }
+
+    .readMore{
+        bottom: -400px !important;
+        left: 460px !important;
+    }
+
+}
+/*style for 110% screen*/
+@media (min-width: 1201px) and (max-width: 1248px) {
+    .tp-caption{
+        bottom: -286px !important;
+    }
+    .logo img{
+        height: 54px !important;
+        /*width: 245px !important;*/ 
+    }
+
+    .readMore{
+        bottom: -375px !important;
+        left: 440px !important;
+    }
+
+}
+
+/*style for 125% screen*/
+@media (min-width: 991px) and (max-width: 1200px) {
+     .logo img{
+        height: 48px !important;
+        /*width: 222px !important;*/ 
+    }
+    .banner .banner-slider-inner h1 {
+        margin-top: 44px;
+        font-size: 55px;
+    }
+    .tp-caption{
+        bottom: -255px !important;
+    }
+    .readMore{
+        bottom: -340px !important;
+        left: 410px;
+    }
+}
+
+.dropdown-submenu a{
+        text-transform: uppercase;
+    }
+
+.blog-photo h5{
+		font-size: 16px;
+	    text-transform: uppercase;
+	    margin-top: 10px;
+	}
+.mission_read_more{
+    text-align: center;
+    display: block;
+}
+
+.media-body p{
+	height: 138px;
+    line-height: 18px;
+    text-align: justify;
+}
+
+.media-body h5{
+	height: 35px;
+}
+
+/*style for services section*/
+.services_section{
+    padding-bottom: 0px;
+}
+.services {
+    padding-top: 14px;
+}
+.services-info{
+	height: 270px !important;
+}
+
+/*style for product section*/
+.product{
+    padding-top: 14px;
+}
+
+/*Style footer recent post*/
+.recentPost P{
+	height: 46px !important;
+}
+
+.recentPostDate{
+	display: inline-block;
+    color: #7c7e83 !important;
+    font-size: 12px !important;
+}
+
+/*style for our team section*/
+
+.gallery-title
+{
+    font-size: 36px;
+    color: #42B32F;
+    text-align: center;
+    font-weight: 500;
+    margin-bottom: 70px;
+}
+.gallery-title:after {
+    content: "";
+    position: absolute;
+    width: 7.5%;
+    left: 46.5%;
+    height: 45px;
+    border-bottom: 1px solid #5e5e5e;
+}
+.filter-button-team
+{	cursor: pointer;
+    margin-top: 8px;
+    padding: 5px 9px;
+    font-size: 15px;
+    /*border: 1px solid #42B32F;
+    border-radius: 5px;
+    text-align: center;
+    color: #42B32F;
+    margin-bottom: 30px;*/
+
+}
+.filter-button-team:hover
+{
+    /*font-size: 18px;
+    border: 1px solid #42B32F;
+    border-radius: 5px;
+    text-align: center;
+    color: #ffffff;
+    background-color: #42B32F;*/
+
+}
+.teamCategoryActive
+{
+    color: #fff !important;
+    background: #ff214f !important;
+}
+
+
+.gallery_product
+{
+    margin-bottom: 30px;
+}
+
+.teamSection{
+    background-color: #ece6e6;
+    text-align: center;
+    width: 100%;
+    padding: 7px 0px;
+}
+
+.teamSection:hover{
+    text-transform: uppercase;
+}
+
+.teamDesignation{
+    font-weight: bold;
+    font-size: 14px;
+}
+
+/*style for portdolio title*/ 
+.productName{
+    text-align: center;
+}
+
+
+/*style for inner menu page section*/
+
+.innerMenuSection{
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+
+
+/*style for mamber of team category*/
+.categoryTitle{
+    text-align: center;
+    /* display: table; */
+    /* margin: 0 auto; */
+    border-bottom: 1px solid #95d68a;
+    padding-bottom: 7px;
+    margin-bottom: 23px;
+}
+
+.teamCategoryMemberBlock{
+    padding: 11px 0px;
+    border: 1px solid #dcd4d4;
+    margin-bottom: 17px;
+    height: 220px;
+}
+.teamCategoryLink{
+   display: inherit;
+    margin: 0 auto;
+
+}
+.teamCategoryImage{
+    height: 128px;
+    display: inherit;
+    margin: 0 auto;
+}
+
+.teamCategoryName{
+    text-align: center;
+    margin-top: 10px;
+    color: #10b781;
+}
+
+.teamCategoryName:hover{
+    color: #333;
+    color: #f90e0e;
+}
+
+.teamCategoryDesignation{
+    text-align: center;
+    text-transform: uppercase;
+}
+
+/*style for portfoilo*/
+.porfolioBlock{
+    border: 1px solid #f3ecec;
+    margin: 0 auto;
+    display: table;
+    width: 96%;
+}
+
+.porfolioBlock .property-thumbnail img{
+   height: 85px;
+}
+
+.porfolioBlock .productName{
+   font-size: 13px;
+}
