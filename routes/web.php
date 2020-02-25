@@ -147,7 +147,6 @@ Route::prefix('admin')->group(function()
 		Route::get('/blogs/status/{id}', 'Admin\BlogController@status')->name('blogs.status');
 		Route::match(['GET', 'POST'], '/blogs/delete/{id}', 'Admin\BlogController@delete')->name('blog.delete');
 
-
 		//End Blog Section
 
 		//News letter subscribe section here

@@ -1,3 +1,8 @@
+<style type="text/css">
+    .shareLink i{
+        color: #afacac;
+    }
+</style>
 <div class="row">
     <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6">
         <div class="footer-item">
@@ -18,28 +23,19 @@
                
             </ul>
             <ul class="social-list clearfix">
-                <?php if($socialLink->facebook){ ?>
-                <li><a href="{{$socialLink->facebook}}" class="facebook"><i class="fa fa-facebook"></i></a></li>
-                <?php } ?>
+                <h6 style="color: #fff;font-size: 14px;">Share With</h6>
+                <li>
+                    <a href="https://www.facebook.com/sharer/sharer.php?u={{URL::current()}}" target="_blank" class="facebook shareLink">
+                        <i class="fa fa-facebook"></i>
+                    </a>
+                </li>
 
-                <?php if($socialLink->twitter){ ?>
-                <li><a href="{{$socialLink->twitter}}" class="twitter"><i class="fa fa-twitter"></i></a></li>
-                <?php } ?>
+                <li><a href="https://twitter.com/intent/tweet?text={{URL::current()}}" target="_blank" class="twitter shareLink"><i class="fa fa-twitter"></i></a></li>
 
-                <?php if($socialLink->linkdin){ ?>
-                <li><a href="{{$socialLink->linkdin}}" class="linkedin"><i class="fa fa-linkedin"></i></a></li>
-                <?php } ?>
+                <li><a href="http://www.linkedin.com/shareArticle?url={{URL::current()}}" target="_blank" class="linkedin shareLink"><i class="fa fa-linkedin"></i></a></li>
 
-                <?php if($socialLink->skype){ ?>
-                <li><a href="{{$socialLink->skype}}" class="linkedin"><i class="fa fa-skype"></i></a></li>
-                <?php } ?>
-                <?php if($socialLink->google){ ?>
-                <li><a href="{{$socialLink->google}}" class="linkedin"><i class="fa fa-google-plus"></i></a></li>
-                <?php } ?>
+                <li><a href="https://plus.google.com/share?url={{URL::current()}}" target="_blank" class="linkedin shareLink"><i class="fa fa-google-plus"></i></a></li>
 
-                <?php if($socialLink->youtube){ ?>
-                <li><a href="{{$socialLink->youtube }}" class="instagram"><i class="fa fa-youtube"></i></a></li>
-                <?php } ?>
             </ul>
         </div>
     </div>
