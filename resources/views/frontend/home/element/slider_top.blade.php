@@ -22,6 +22,7 @@
   }
 
   .contact_top_social ul{
+    padding-left: 0px !important;
     
   }
 
@@ -88,23 +89,24 @@
     color: #333;
     margin-bottom: 0px;
     font-size: 13px;
+    text-align: center;
   }
 </style>
 <div class="row slider_top">
-  <div class="col-md-6 col-sm-4 col-12">
+  <div class="col-lg-6 col-md-12 col-sm-12 col-12 mb-3 mb-md-3">
     <div class="contact_top_section">
-      <div>
-        <div class="newDiv">
+      <div class="row">
+        <div class="newDiv col-lg-4 col-md-4 col-sm-4 col-5">
           <h6>Phone</h6>
           <p>{{$information->mobile1}}</p>
         </div>
 
-        <div class="newDiv" style="margin-left: 13px;">
+        <div class="newDiv col-lg-4 col-md-4 col-sm-4 col-7 mb-2 mb-md-0"{{--  style="margin-left: 13px;" --}}>
           <h6>Mobile</h6>
           <p>{{$information->mobile2}}</p>
         </div>
 
-        <div class="newDiv" style="margin-left: 13px;">
+        <div class="newDiv col-lg-4 col-md-4 col-sm-4 col-12"{{--  style="margin-left: 13px;" --}}>
           <h6>Email</h6>
           <p>{{$information->siteEmail1}}</p>
         </div>
@@ -124,7 +126,7 @@
     
   </div>
 
-  <div class="col-md-3 col-sm-4 col-12">
+  <div class="col-lg-3 col-md-4 col-sm-4 col-5">
     <div class="contact_top_section">
       <h5 class="text-center top_title">Follow Us</h5>
       <div class="contact_top_social">
@@ -156,7 +158,7 @@
     </div>
   </div>
 
-  <div class="col-md-3 col-sm-4 col-12">
+  <div class="col-lg-3 col-md-7 col-sm-7 col-7">
     <div class="contact_top_section">
       <div class="slider_top_images">
         <img src="{{ asset('/public/frontend/assets/img/slider_top/nrb.jpg') }}">
