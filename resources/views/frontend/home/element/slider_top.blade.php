@@ -5,8 +5,8 @@
     color: #333;
     /*margin-top: 7px;*/
   }
-  .contact_top_section{
-    padding: 4px 0px 0px 0px;
+  .slider_top {
+    padding: 20px 0px 0px 20px;
   }
   .top_title{
     font-size: 11px;
@@ -18,7 +18,6 @@
     font-size: 14px;
   }
   .contact_top_social{
-    text-align: center;
   }
 
   .contact_top_social ul{
@@ -33,7 +32,7 @@
   }
 
   .slider_top_images{
-    float: right;
+
   }
 
   .slider_top_images img{
@@ -82,26 +81,24 @@
   .newDiv h6{
     font-size: 14px;
     color: #333;
-    text-align: center;
   }
 
   .newDiv p{
     color: #333;
     margin-bottom: 0px;
     font-size: 13px;
-    text-align: center;
   }
 </style>
 <div class="row slider_top">
-  <div class="col-lg-6 col-md-12 col-sm-12 col-12 mb-3 mb-md-3">
+  <div class="col-lg-7 col-md-12 col-sm-12 col-12 mb-3 mb-md-3">
     <div class="contact_top_section">
       <div class="row">
-        <div class="newDiv col-lg-4 col-md-4 col-sm-4 col-5">
+        <div class="newDiv col-lg-4 col-md-4 col-sm-4 col-12">
           <h6>Phone</h6>
           <p>{{$information->mobile1}}</p>
         </div>
 
-        <div class="newDiv col-lg-4 col-md-4 col-sm-4 col-7 mb-2 mb-md-0"{{--  style="margin-left: 13px;" --}}>
+        <div class="newDiv col-lg-4 col-md-4 col-sm-4 col-12 mb-2 mb-md-0"{{--  style="margin-left: 13px;" --}}>
           <h6>Mobile</h6>
           <p>{{$information->mobile2}}</p>
         </div>
@@ -126,9 +123,9 @@
     
   </div>
 
-  <div class="col-lg-3 col-md-4 col-sm-4 col-5">
+  <div class="col-lg-2 col-md-4 col-sm-4 col-12">
     <div class="contact_top_section">
-      <h5 class="text-center top_title">Follow Us</h5>
+      <h5 class="top_title">Follow Us</h5>
       <div class="contact_top_social">
         <ul>
             <?php if($socialLink->facebook){ ?>
@@ -158,7 +155,7 @@
     </div>
   </div>
 
-  <div class="col-lg-3 col-md-7 col-sm-7 col-7">
+  <div class="col-lg-3 col-md-3 col-sm-7 col-12">
     <div class="contact_top_section">
       <div class="slider_top_images">
         <img src="{{ asset('/public/frontend/assets/img/slider_top/nrb.jpg') }}">

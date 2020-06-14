@@ -4318,7 +4318,7 @@ body.off-canvas-sidebar-open {
     }
 
     .main-header .logo img {
-        height: 35px;
+        /*height: 35px;*/
     }
 
     .main-header .navbar-expand-lg .navbar-nav .nav-link {

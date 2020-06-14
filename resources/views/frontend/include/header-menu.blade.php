@@ -17,7 +17,7 @@
             </button>
             <div class="navbar-collapse collapse w-100" id="navbar">
                 <ul class="navbar-nav flex-column mainUl">
-                    <li class="nav-item dropdown active">
+                    <li class="nav-item dropdown parentMenu active">
                         <a class="nav-link" href="<?php echo  url('/') ?>" id="navbarDropdownMenuLink"  aria-haspopup="true" aria-expanded="false">
                             Home
                         </a>
@@ -43,7 +43,7 @@
                         $menuLink = route('menu.content',['menuName'=>$menuName,'menuId'=>$mainMenu->id]);
                 ?>
                     <li class="nav-item dropdown parentMenu">
-                        <a class="{{$dropdownToogle}} parentMenuLink" href="{{@$menuLink}}" id="navbarDropdown9" role="button" aria-haspopup="true" aria-expanded="false">
+                        <a class="{{$dropdownToogle}} parentMenuLink nav-link" href="{{@$menuLink}}" id="navbarDropdown9" role="button" aria-haspopup="true" aria-expanded="false">
                             {{$mainMenu->menuName}}
                         </a> 
                         <?php
