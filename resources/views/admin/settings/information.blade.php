@@ -220,8 +220,6 @@
     </div>
 </div>
 
-
-
     <script type="text/javascript">
 
         document.forms['editSettings'].elements['sitestatus'].value = "{{$settings->sitestatus}}";

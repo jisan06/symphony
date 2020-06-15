@@ -25,12 +25,12 @@ Route::prefix('admin')->group(function()
 		Route::post('/adminLogo-update', 'Admin\SettingsController@updatadminLogo')->name('adminLogo.update');
 
 		//About Company
-		Route::get('/about-company', 'Admin\AboutCompanyController@index')->name('aboutCompany.index');
+		/*Route::get('/about-company', 'Admin\AboutCompanyController@index')->name('aboutCompany.index');
 		Route::match(['GET', 'POST'], '/about-company/add', 'Admin\AboutCompanyController@add')->name('aboutCompany.add');
 		Route::match(['GET', 'POST'], '/about-company/edit/{id}', 'Admin\AboutCompanyController@edit')->name('aboutCompany.edit');
 		Route::get('/about-company/status/{id}', 'Admin\AboutCompanyController@status')->name('aboutCompany.status');
 
-		Route::match(['GET', 'POST'], '/about-company/delete/{id}', 'Admin\AboutCompanyController@delete')->name('aboutCompany.delete');
+		Route::match(['GET', 'POST'], '/about-company/delete/{id}', 'Admin\AboutCompanyController@delete')->name('aboutCompany.delete');*/
 
 		//Why Choose Us Section
 		Route::get('/choose-us', 'Admin\WhyChooseUsController@index')->name('chooseUs.index');
@@ -153,13 +153,13 @@ Route::prefix('admin')->group(function()
 		Route::resource('subscribers', 'Admin\NewsletterController');
 
 		//User Menu 
-		Route::get('/company', 'Admin\CompanyController@index')->name('company.index');
+		/*Route::get('/company', 'Admin\CompanyController@index')->name('company.index');
 		Route::get('/company/add', 'Admin\CompanyController@add')->name('company.add');
 		Route::post('/company/save', 'Admin\CompanyController@save')->name('company.save');
 		Route::get('/company/edit/{id}', 'Admin\CompanyController@edit')->name('company.edit');
 		Route::post('/company/update', 'Admin\CompanyController@update')->name('company.update');
 		Route::get('/company/status', 'Admin\CompanyController@status')->name('company.status');
-		Route::post('/company-delete', 'Admin\CompanyController@destroy')->name('company.delete');
+		Route::post('/company-delete', 'Admin\CompanyController@destroy')->name('company.delete');*/
 
 		//End User Menu
 

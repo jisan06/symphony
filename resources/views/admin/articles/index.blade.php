@@ -71,6 +71,11 @@
                             @endforeach
                         </select>
                     </div>
+
+                    <div class="col-md-2">
+                        <div style="margin-top: 27px;"></div>
+                        <button class="btn btn-success" onclick="ViewData()">SEARCH</button>
+                    </div>
                 </div>
 
                 <div class="table-responsive">
@@ -258,15 +263,10 @@
                 success: function(response) {
                     var subArticleList = response.subArticles;
                     var subArticle = $(".subArticle").html('');
-                    if(response.countSubArticles == 0){
-                        window.location.href = "{{route('articles.index')}}"+"?parentArticle="+parentArticle;
-
-                    }else{
-                        subArticle.append('<option value="">Select Sub Category</option>');
-                        for (var row of subArticleList) {
-                            subArticle.append($("<option></option>")
-                                    .attr("value", row.id).text(row.articleName));
-                        }
+                    subArticle.append('<option value="">Select Sub Category</option>');
+                    for (var row of subArticleList) {
+                        subArticle.append($("<option></option>")
+                                .attr("value", row.id).text(row.articleName));
                     }
                     
                     $('.chosen-select').chosen();
@@ -276,7 +276,7 @@
         }); 
 
 
-        $('.subArticle').on('change', function(){
+        /*$('.subArticle').on('change', function(){
             var parentArticle = $('.parentArticle').val();
             var subArticleParam = $('.subArticle').val();
             if(parentArticle){
@@ -284,7 +284,13 @@
             }else{
                 alert('Please Select Parent Article !');
             }
-        }); 
+        });*/ 
+
+        function ViewData(){
+            var parentArticle = $('.parentArticle').val();
+            var subArticleParam = $('.subArticle').val();
+            window.location.href = "{{route('articles.index')}}"+"?parentArticle="+parentArticle+"&subArticle="+subArticleParam;
+        }
     </script>
 
 @endsection

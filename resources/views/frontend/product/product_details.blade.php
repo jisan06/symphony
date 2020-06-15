@@ -65,7 +65,7 @@
 	                    	<div class="detail">
 		                        <h5 style="text-align: center;">{{$productFeature->firstHomeTitle}}</h5>
 		                        <div style="height: 120px;">
-		                        	<?php echo str_limit($productFeature->homeDescription,250); ?>
+		                        	<?php echo $productFeature->homeDescription; ?>
 		                        </div>
 		                        <a class="mission_read_more" href="{{@$menuLink}}">Learn More</a>
 		                    </div>

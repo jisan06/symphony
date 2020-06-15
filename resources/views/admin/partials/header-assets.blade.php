@@ -27,6 +27,7 @@
 <!-- tagsinput CSS -->
 <link href="{{ asset('/public/admin-elite/assets/node_modules/bootstrap-tagsinput/dist/bootstrap-tagsinput.css') }}" rel="stylesheet">
 <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.10/css/select2.min.css" rel="stylesheet" />
+
 @if(Auth::user()->role != '2')
     <style>
         .user2{

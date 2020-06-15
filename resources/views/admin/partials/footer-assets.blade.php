@@ -50,6 +50,7 @@
 <script src="{{ asset('/public/admin-elite/tinymce/tinymce_editor.js') }}"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.8/js/select2.min.js" defer></script>
 
+
 {{-- script for multiple and suggested select --}}
 <script>
 	$(document).ready(function () {

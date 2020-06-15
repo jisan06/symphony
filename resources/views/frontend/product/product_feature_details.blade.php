@@ -33,14 +33,14 @@
         	</div>
         	<div style="margin-top: 10px"></div>
         	<div class="row">
-        		<div class="col-md-7">
+        		<div class="col-md-12">
         			<div class="detail">
                        @php
                        		echo $productFeatureDetails->innerDescription;
                        @endphp
                     </div>
         		</div>
-        		<div class="col-md-5">
+        		{{-- <div class="col-md-5">
         			<div class="blog-photo" style="height: 90px;">
         				@php
         					if(file_exists($productFeatureDetails->firstInnerImage)){
@@ -51,7 +51,7 @@
         				@endphp
 	                	<img src="{{ $image }}" class="img-fluid" style="height: 100px;">	
                     </div>
-        		</div>
+        		</div> --}}
         	</div>
         </div>
     </div>
