@@ -46,7 +46,7 @@
 <!-- tagsinput  -->
 <script src="{{ asset('/public/admin-elite/assets/node_modules/bootstrap-tagsinput/dist/bootstrap-tagsinput.min.js') }}"></script>
 
-<script src="{{ asset('/public/admin-elite/tinymce/tinymce.min.js') }}"></script>
+<script src="//cdn.tinymce.com/4/tinymce.min.js"></script>
 <script src="{{ asset('/public/admin-elite/tinymce/tinymce_editor.js') }}"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.8/js/select2.min.js" defer></script>
 

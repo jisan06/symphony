@@ -49,8 +49,8 @@ class FrontendController extends Controller
      
      public function ProdeuctFeatureDetails($parentName,$articleName,$articleId){
         $productFeatureDetails = Article::where('articleStatus','1')->where('id',$articleId)->first();
-        $parentArticle = Article::where('id',$productFeatureDetails->parentArticle)->first();
-        $menuDetails = Menu::where('id',$parentArticle->menuId)->first();
+        $parentArticle = Article::where('id',@$productFeatureDetails->parentArticle)->first();
+        $menuDetails = Menu::where('id',@$parentArticle->menuId)->first();
         return view('frontend.product.product_feature_details')->with(compact('menuDetails','productFeatureDetails'));
      }
     

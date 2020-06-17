@@ -47,7 +47,7 @@ class AppServiceProvider extends ServiceProvider
 
         //Link for Add New Button
         View::composer('*',function($addLink){
-            $routeName = \Request::route()->getName();
+            $routeName = \Route::currentRouteName();
             $userMenus = UserMenu::where('menuLink',$routeName)->first();
             $userMenuAction = UserMenuActions::where('parentmenuId',@$userMenus->id)->where('menuType',1)->first();
             if(@$userMenuAction->actionLink){
@@ -60,7 +60,7 @@ class AppServiceProvider extends ServiceProvider
 
         //Link for Go Back
         View::composer('*',function($backLink){
-            $routeName = \Request::route()->getName();
+            $routeName = \Route::currentRouteName();
             $userMenuAction = UserMenuActions::where('actionLink',@$routeName)->first();
             $userMenu = UserMenu::where('id',@$userMenuAction->parentmenuId)->first();
             $backLink->with('goBackLink',@$userMenu->menuLink);

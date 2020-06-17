@@ -13,7 +13,8 @@
         "laravel/framework": "5.5.*",
         "laravel/tinker": "~1.0",
         "niklasravnsborg/laravel-pdf": "^3.1",
-        "shipu/php-aamarpay-payment": "^1.0"
+        "shipu/php-aamarpay-payment": "^1.0",
+        "unisharp/laravel-filemanager": "^2.0"
     },
     "require-dev": {
         "filp/whoops": "~2.0",

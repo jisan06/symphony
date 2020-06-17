@@ -4,15 +4,25 @@
 
 Auth::routes();
 
+Route::group(['prefix' => 'admin', 'middleware' => ['web', 'auth:admin']], function () {
+     Route::get('/file/laravel-filemanager', '\UniSharp\LaravelFilemanager\controllers\LfmController@show')->name('laravelFilemanager');
+		Route::post('/file/laravel-filemanager/upload', '\UniSharp\LaravelFilemanager\controllers\UploadController@upload')->name('laravelFilemanager.upload');
+ });
+
+
 Route::prefix('admin')->group(function()
 {
 	Route::middleware('auth:admin')->group(function(){
+
+		
+
+
 	Route::group(['middleware'=>'menuPermission'],function(){
 
 		//Dashboard Link url
 		Route::get('/', 'HomeController@index')->name('admin.index');
 
-		
+
 		/*
 			All Setings start here
 		*/
@@ -265,4 +275,6 @@ Route::post('/contact-save', 'ContactController@contacts')->name('contact.save')
 //Blog Here
 Route::get('/blog', 'FrontendController@blog');
 Route::get('/blog/{id}', 'BlogController@BlogDetails')->name('blog.details');
+
+
 

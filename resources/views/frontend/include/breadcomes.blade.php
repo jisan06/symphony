@@ -27,9 +27,9 @@ use App\Article;
         $menuLink = route('menu.content',['subMenuName'=>$subMenuName,'subMenuId'=>$menuDetails->id]);
         $name = $productFeatureDetails->articleName;
     }else{
-		$name = $menuDetails->menuName;
+		$name = @$menuDetails->menuName;
 	}
-    $article = Article::where('menuId',$menuDetails->id)->first();
+    $article = Article::where('menuId',@$menuDetails->id)->first();
     if(file_exists(@$article->headerImage)){
         $headerImage = asset('/'.$article->headerImage);
     }else{
