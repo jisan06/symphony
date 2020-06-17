@@ -1,7 +1,8 @@
-var my_path = document.querySelector('meta[name="root_path"]').content+"/admin";
+var my_path = document.querySelector('meta[name="root_path"]').content+"/admin/file/";
 var editor_config = {
     path_absolute : my_path,
     selector: "textarea.tinymce",
+    filebrowserImageUploadUrl: route_prefix + '/upload?type=Images&_token={{csrf_token()}}',
     plugins: [
         "advlist autolink autosave link image lists charmap print preview hr anchor pagebreak",
         "searchreplace wordcount visualblocks visualchars code fullscreen insertdatetime media nonbreaking",
@@ -16,7 +17,7 @@ var editor_config = {
       var x = window.innerWidth || document.documentElement.clientWidth || document.getElementsByTagName('body')[0].clientWidth;
       var y = window.innerHeight|| document.documentElement.clientHeight|| document.getElementsByTagName('body')[0].clientHeight;
 
-      var cmsURL = editor_config.path_absolute+ "/file/" + 'laravel-filemanager?field_name=' + field_name;
+      var cmsURL = editor_config.path_absolute+ 'laravel-filemanager?field_name=' + field_name;
       if (type == 'image') {
         cmsURL = cmsURL + "&type=Images";
       } else {
