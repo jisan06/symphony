@@ -29,8 +29,7 @@ class UserMenuController extends Controller
 
      public function save(Request $request){
         $this->validate(request(), [
-             'menuName' => 'required|unique:user_menus',         
-             'menuLink' => 'required',     
+             'menuName' => 'required|unique:user_menus',     
              'orderBy' => 'required',     
              'menuStatus' => 'required',     
         ]);

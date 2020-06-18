@@ -78,64 +78,6 @@ Check `vendor/unisharp/laravel-filemanager/src/views/demo.blade.php`, which alre
 </script>
 ```
 
-### Option 3: Summernote
-
-```html
-<!-- dependencies (Summernote depends on Bootstrap & jQuery) -->
-<link href="http://netdna.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.css" rel="stylesheet">
-<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.js"></script>
-<script src="http://netdna.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.js"></script>
-
-<link href="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.3/summernote.css" rel="stylesheet">
-<script src="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.3/summernote.js"></script>
-
-<!-- markup -->
-<textarea id="summernote-editor" name="content">{!! old('content', $content) !!}</textarea>
-
-<!-- summernote config -->
-<script>
-  $(document).ready(function(){
-
-    // Define function to open filemanager window
-    var lfm = function(options, cb) {
-      var route_prefix = (options && options.prefix) ? options.prefix : '/laravel-filemanager';
-      window.open(route_prefix + '?type=' + options.type || 'file', 'FileManager', 'width=900,height=600');
-      window.SetUrl = cb;
-    };
-
-    // Define LFM summernote button
-    var LFMButton = function(context) {
-      var ui = $.summernote.ui;
-      var button = ui.button({
-        contents: '<i class="note-icon-picture"></i> ',
-        tooltip: 'Insert image with filemanager',
-        click: function() {
-
-          lfm({type: 'image', prefix: '/laravel-filemanager'}, function(lfmItems, path) {
-            lfmItems.forEach(function (lfmItem) {
-              context.invoke('insertImage', lfmItem.url);
-            });
-          });
-
-        }
-      });
-      return button.render();
-    };
-
-    // Initialize summernote with LFM button in the popover button group
-    // Please note that you can add this button to any other button group you'd like
-    $('#summernote-editor').summernote({
-      toolbar: [
-        ['popovers', ['lfm']],
-      ],
-      buttons: {
-        lfm: LFMButton
-      }
-    })
-  });
-</script>
-```
-
 ## Standalone button
 If you are going to use filemanager independently, meaning set the value of an input to selected photo/file url, follow this structure:
 
@@ -152,11 +94,11 @@ If you are going to use filemanager independently, meaning set the value of an i
       <input id="thumbnail" class="form-control" type="text" name="filepath">
     </div>
     <img id="holder" style="margin-top:15px;max-height:100px;">
-    ```
+    ``` 
 1. Import lfm.js(run `php artisan vendor:publish` if you need).
 
     ```html
-    <script src="/vendor/laravel-filemanager/js/stand-alone-button.js"></script>
+    <script src="/vendor/laravel-filemanager/js/lfm.js"></script>
     ```
 
 1. Init filemanager with type. (requires jQuery)
@@ -172,63 +114,28 @@ If you are going to use filemanager independently, meaning set the value of an i
     Domain can be specified in the second parameter(optional, but will be required when developing on Windows mechines) :
 
     ```javascript
-    var route_prefix = "url-to-filemanager";
-    $('#lfm').filemanager('image', {prefix: route_prefix});
+    var domain = "{{ url() }}";
+    $('#lfm').filemanager('image', {prefix: domain});
     ```
-
+    
 ## JavaScript integration
 In case you are developing javascript application and you want dynamically to trigger filemanager popup, you can create function like this. It doesn't rely on jQuery.
 
 
 ```javascript
-var lfm = function(id, type, options) {
-  let button = document.getElementById(id);
+var lfm = function(options, cb) {
 
-  button.addEventListener('click', function () {
-    var route_prefix = (options && options.prefix) ? options.prefix : '/laravel-filemanager';
-    var target_input = document.getElementById(button.getAttribute('data-input'));
-    var target_preview = document.getElementById(button.getAttribute('data-preview'));
+	var route_prefix = (options && options.prefix) ? options.prefix : '/laravel-filemanager';
 
-    window.open(route_prefix + '?type=' + options.type || 'file', 'FileManager', 'width=900,height=600');
-    window.SetUrl = function (items) {
-      var file_path = items.map(function (item) {
-        return item.url;
-      }).join(',');
-
-      // set the value of the desired input to image url
-      target_input.value = file_path;
-      target_input.dispatchEvent(new Event('change'));
-
-      // clear previous preview
-      target_preview.innerHtml = '';
-
-      // set or change the preview image src
-      items.forEach(function (item) {
-        let img = document.createElement('img')
-        img.setAttribute('style', 'height: 5rem')
-        img.setAttribute('src', item.thumb_url)
-        target_preview.appendChild(img);
-      });
-
-      // trigger change event
-      target_preview.dispatchEvent(new Event('change'));
-    };
-  });
-};
+	window.open(route_prefix + '?type=' + options.type || 'file', 'FileManager', 'width=900,height=600');
+	window.SetUrl = cb;
+}
 ```
 
 And use it like this:
 
 ```javascript
-var route_prefix = "url-to-filemanager";
-lfm('lfm', 'image', {prefix: route_prefix});
-lfm('lfm2', 'file', {prefix: route_prefix});
-```
+lfm({type: 'image', prefix: 'prefix'}, function(url, path) {
 
-The first parameter is id, the second parameter is the type of laravel filemanager(which ).
-
-## Embed file manager
-
-```html
-<iframe src="/laravel-filemanager" style="width: 100%; height: 500px; overflow: hidden; border: none;"></iframe>
+});
 ```

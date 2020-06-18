@@ -1,58 +1,72 @@
-<?php
+<?php namespace Unisharp\Laravelfilemanager\controllers;
 
-namespace UniSharp\LaravelFilemanager\Controllers;
+use Illuminate\Support\Facades\File;
 
+/**
+ * Class FolderController
+ * @package Unisharp\Laravelfilemanager\controllers
+ */
 class FolderController extends LfmController
 {
     /**
-     * Get list of folders as json to populate treeview.
+     * Get list of folders as json to populate treeview
      *
      * @return mixed
      */
     public function getFolders()
     {
-        $folder_types = array_filter(['user', 'share'], function ($type) {
-            return $this->helper->allowFolderType($type);
-        });
+        $folder_types = [];
+        $root_folders = [];
+
+        if (parent::allowMultiUser()) {
+            $folder_types['user'] = 'root';
+        }
+
+        if (parent::allowShareFolder()) {
+            $folder_types['share'] = 'shares';
+        }
+
+        foreach ($folder_types as $folder_type => $lang_key) {
+            $root_folder_path = parent::getRootFolderPath($folder_type);
+
+            $children = parent::getDirectories($root_folder_path);
+            usort($children, function ($a, $b) {
+                return strcmp($a->name, $b->name);
+            });
+
+            array_push($root_folders, (object)[
+                'name' => trans('laravel-filemanager::lfm.title-' . $lang_key),
+                'path' => parent::getInternalPath($root_folder_path),
+                'children' => $children,
+                'has_next' => !($lang_key == end($folder_types))
+            ]);
+        }
 
         return view('laravel-filemanager::tree')
-            ->with([
-                'root_folders' => array_map(function ($type) use ($folder_types) {
-                    $path = $this->lfm->dir($this->helper->getRootFolder($type));
-
-                    return (object) [
-                        'name' => trans('laravel-filemanager::lfm.title-' . $type),
-                        'url' => $path->path('working_dir'),
-                        'children' => $path->folders(),
-                        'has_next' => ! ($type == end($folder_types)),
-                    ];
-                }, $folder_types),
-            ]);
+            ->with(compact('root_folders'));
     }
 
+
     /**
-     * Add a new folder.
+     * Add a new folder
      *
      * @return mixed
      */
     public function getAddfolder()
     {
-        $folder_name = $this->helper->input('name');
+        $folder_name = parent::translateFromUtf8(trim(request('name')));
 
-        try {
-            if ($folder_name === null || $folder_name == '') {
-                return $this->helper->error('folder-name');
-            } elseif ($this->lfm->setName($folder_name)->exists()) {
-                return $this->helper->error('folder-exist');
-            } elseif (config('lfm.alphanumeric_directory') && preg_match('/[^\w-]/i', $folder_name)) {
-                return $this->helper->error('folder-alnum');
-            } else {
-                $this->lfm->setName($folder_name)->createFolder();
-            }
-        } catch (\Exception $e) {
-            return $e->getMessage();
+        $path = parent::getCurrentPath($folder_name);
+
+        if (empty($folder_name)) {
+            return parent::error('folder-name');
+        } elseif (File::exists($path)) {
+            return parent::error('folder-exist');
+        } elseif (config('lfm.alphanumeric_directory') && preg_match('/[^\w-]/i', $folder_name)) {
+            return parent::error('folder-alnum');
+        } else {
+            parent::createFolderByPath($path);
+            return parent::$success_response;
         }
-
-        return parent::$success_response;
     }
 }

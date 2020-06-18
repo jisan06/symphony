@@ -13,7 +13,7 @@
                 <a href="{{ route($addNewLink) }}" class="btn btn-info" style="float: right;"><i class="fa fa-plus"></i> Add New</a>
 
                 <div class="row">
-                    <div class="col-md-3">
+                    <div class="col-md-4">
                         <h5><strong>Search By Parent Article</strong></h5>
                         <form>
                             <select name="parentArticleParam" class="form-control chosen-select parentArticle">

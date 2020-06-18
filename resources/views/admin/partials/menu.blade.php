@@ -23,7 +23,12 @@
             $rolePermission = explode(',', $userRoles->permission);
             if (in_array($menu->id, $rolePermission)) {
                 if ($menu->parentMenu == null) {
-                $parentMenuLink = $menu->menuLink;
+                    if(@$menu->menuLink){
+                        $parentMenuLink = route($menu->menuLink);
+                    }else{
+                        $parentMenuLink = "javascript:void(0)";
+                    }
+                
                 $childMenu = UserMenu::orderBy('orderBy','ASC')->where('parentMenu',$menu->id)->where('menuStatus',1)->get();
                 $countChildMenu = count(@$childMenu);
                 if (@$parentMenuRoute->id == $menu->id) {
@@ -39,9 +44,11 @@
                 <?php
                     if ($countChildMenu > 0 ) {
                 ?>
-                <a class="waves-effect waves-dark has-arrow {{$parentMenuActive}}" href="javascript:void(0)"><i class="fa fa-bars"></i><span class="hide-menu">{{$menu->menuName}} </span></a>
+                <a class="waves-effect waves-dark has-arrow {{$parentMenuActive}}" id="menu_{{$menu->id}}" href="javascript:void(0)">
+                    <i class="fa fa-bars"></i>
+                    <span class="hide-menu">{{$menu->menuName}} </span></a>
                 <?php }else{ ?>
-                    <a class="waves-effect waves-dark" href="{{ route($parentMenuLink) }}"><i class="fa fa-bars"></i><span class="hide-menu">{{$menu->menuName}} </span></a>
+                    <a class="waves-effect waves-dark" id="menu_{{$menu->id}}" href="{{ $parentMenuLink }}"><i class="fa fa-bars"></i><span class="hide-menu">{{$menu->menuName}} </span></a>
                 <?php } ?>
 
                 <?php

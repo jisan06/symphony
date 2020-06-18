@@ -168,7 +168,7 @@ return [
         /*
          * Package Service Providers...
          */
-        UniSharp\LaravelFilemanager\LaravelFilemanagerServiceProvider::class,
+        Unisharp\Laravelfilemanager\LaravelFilemanagerServiceProvider::class,
         Intervention\Image\ImageServiceProvider::class,
         Gloudemans\Shoppingcart\ShoppingcartServiceProvider::class,
         Shipu\Aamarpay\AamarpayServiceProvider::class,

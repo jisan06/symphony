@@ -83,7 +83,7 @@ Admin
                 <div class="form-group row {{ $errors->has('menuLink') ? ' has-danger' : '' }}">
                     <label for="inputHorizontalDnger" class="col-sm-3 col-form-label">Menu Link</label>
                     <div class="col-sm-6">
-                        <input type="text" class="form-control form-control-danger" placeholder="Menu link" name="menuLink" value="{{ $menuItem->menuLink }}" required>
+                        <input type="text" class="form-control form-control-danger" placeholder="Menu link" name="menuLink" value="{{ $menuItem->menuLink }}">
                         @if ($errors->has('menuLink'))
                         @foreach($errors->get('menuLink') as $error)
                         <div class="form-control-feedback">{{ $error }}</div>

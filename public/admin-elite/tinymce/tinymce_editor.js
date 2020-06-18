@@ -2,7 +2,7 @@ var my_path = document.querySelector('meta[name="root_path"]').content+"/admin/f
 var editor_config = {
     path_absolute : my_path,
     selector: "textarea.tinymce",
-    filebrowserImageUploadUrl: route_prefix + '/upload?type=Images&_token={{csrf_token()}}',
+    /*filebrowserImageUploadUrl: route_prefix + '/upload?type=Images&_token={{csrf_token()}}',*/
     plugins: [
         "advlist autolink autosave link image lists charmap print preview hr anchor pagebreak",
         "searchreplace wordcount visualblocks visualchars code fullscreen insertdatetime media nonbreaking",
