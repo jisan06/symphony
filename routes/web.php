@@ -6,6 +6,7 @@ Auth::routes();
 
 Route::group(['prefix' => 'admin', 'middleware' => ['web', 'auth:admin']], function () {
      Route::get('/file/laravel-filemanager', '\Unisharp\Laravelfilemanager\controllers\LfmController@show')->name('laravelFilemanager');
+     
 		Route::post('/file/laravel-filemanager/upload', '\Unisharp\Laravelfilemanager\controllers\UploadController@upload')->name('laravelFilemanager.upload');
  });
 

@@ -117,6 +117,22 @@
 {{-- script for go back --}}
 <script type="text/javascript">
 	function goBack() {
-                window.history.go(-1);
-            }
+        window.history.go(-1);
+    }
 </script>
+
+
+{{-- <script type="text/javascript">
+	$(document).ready(function () {
+	    $("#menu_79").click(function () {
+	        $("#fileManagerLinkDialog").attr('src', $('#fileManagerLink').attr("href"));
+	        $("#fileManagerModal").modal({
+	            modal: true,
+	            close: function () {
+	                $("#fileManagerLinkDialog").attr('src', "about:blank");
+	            }
+	        });
+	        return false;
+	    });
+	});
+</script> --}}

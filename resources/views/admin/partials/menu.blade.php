@@ -44,7 +44,7 @@
                 <?php
                     if ($countChildMenu > 0 ) {
                 ?>
-                <a class="waves-effect waves-dark has-arrow {{$parentMenuActive}}" id="menu_{{$menu->id}}" href="javascript:void(0)">
+                <a class="waves-effect waves-dark has-arrow {{$parentMenuActive}}" id="mceu_1000000-open" href="javascript:void(0)">
                     <i class="fa fa-bars"></i>
                     <span class="hide-menu">{{$menu->menuName}} </span></a>
                 <?php }else{ ?>
