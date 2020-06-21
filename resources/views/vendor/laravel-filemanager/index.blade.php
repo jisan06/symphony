@@ -147,6 +147,7 @@
   <script src="//cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>
   <script src="{{ asset('public/vendor/laravel-filemanager/js/cropper.min.js') }}"></script>
   <script src="{{ asset('public/vendor/laravel-filemanager/js/jquery.form.min.js') }}"></script>
+  <script src="{{ asset('public/vendor/laravel-filemanager/js/stand-alone-button.js') }}"></script>
   <script>
     var route_prefix = "{{ url('/') }}";
     var lfm_route = "{{ url(config('lfm.prefix')) }}";

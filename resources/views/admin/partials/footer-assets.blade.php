@@ -122,7 +122,7 @@
 </script>
 
 
-{{-- <script type="text/javascript">
+<script type="text/javascript">
 	$(document).ready(function () {
 	    $("#menu_79").click(function () {
 	        $("#fileManagerLinkDialog").attr('src', $('#fileManagerLink').attr("href"));
@@ -135,4 +135,4 @@
 	        return false;
 	    });
 	});
-</script> --}}
+</script>

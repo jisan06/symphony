@@ -154,8 +154,6 @@
                                             <input type="file" class="form-control form-control-danger" name="firstHomeImage">
                                              <span class="imageSizeInfo">/* Standard Image Size : 800*540 px */ <br></span>
 
-                                             
-
                                             <?php if (file_exists(@$articles->firstHomeImage)) { ?> 
                                                 <img src="{{asset('/').@$articles->firstHomeImage}}" style="height: 90px;">
                                             <?php }else{ ?>

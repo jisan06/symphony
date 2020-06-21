@@ -128,13 +128,13 @@
     <!-- This page plugins -->
     <!-- ============================================================== -->
     @yield('custom-js')
-{{-- 
+
 
     
     <div class="modal fade" id="fileManagerModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div class="modal-dialog" role="document" style="display: table;">
         <div class="modal-content" style="width: auto;display: inline-block;">
-            <a id="fileManagerLink" href="{{ route('laravelFilemanager') }}"></a>
+            <a id="fileManagerLink" href="{{ url('/') }}/admin/file/laravel-filemanager?field_name=mceu_174-inp&type=Images"></a>
           <div class="modal-body">
             <iframe id="fileManagerLinkDialog" width="800" height="400"></iframe>
           </div>
@@ -143,7 +143,7 @@
           </div>
         </div>
       </div>
-    </div> --}}
+    </div>
 
 </body>
 </html>
